@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Invest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Investment Details</h2>
+
+<div class="container col-sm-4">
+
+    <div class="well">
+        <h3>Account Overview</h3>
+        <hr />
+        <p>Invest here</p>
+        <hr />
+        <p>HISTORY</p>
+        <hr />
+        <p>MAKE DEPOSIT</p>
+        <hr />
+        <p>WITHDRAW</p>
+        <hr />
+        LIVE SUPPORT
+        <hr />
+        <a href="javascript:document.getElementById('logoutForm').submit()">LOG  OFF</a>
+    </div>
+
+</div>
+
+<div class="container col-sm-8">
+    <div class="well">
+        @if (DateTime.Now.Hour >= 12)
+        {
+            <p>Good Day @User.Identity.GetUserName()! </p>
+        }
+        else
+        {
+            <p>Good Morning @User.Identity.GetUserName()! </p>
+        }
+
+        <hr />
+        <p>Your current account balance is $0</p>
+
+    </div>
+    <button class="btn btn-primary">Make A Deposit</button>
+    <div class="col-md-4"></div>
+    <button class="btn btn-success">Withdraw Earnings</button>
+
+
+</div>
