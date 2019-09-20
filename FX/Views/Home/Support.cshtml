@@ -1,0 +1,45 @@
+﻿<div class="container">
+    <table id="bitcoins" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                symbol
+            </th>
+            <th>
+                name
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            $('#bitcoins').DataTable({
+                ajax: {
+                    url: "https://api.coingecko.com/api/v3/coins/list",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "id"
+                    },
+                    {
+                        data: "symbol"
+                    },
+                    {
+                        data: "name"
+                    }
+                ]
+            });
+
+        });
+    </script>
+}
