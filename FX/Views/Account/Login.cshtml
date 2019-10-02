@@ -10,11 +10,6 @@
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                <fieldset>
-                    
-                    
-
-                </fieldset>
                 @Html.AntiForgeryToken()
                 <h4>Please Login with your credentials.</h4>
                 <hr />
