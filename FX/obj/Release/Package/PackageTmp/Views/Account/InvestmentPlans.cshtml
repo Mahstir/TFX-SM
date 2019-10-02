@@ -6,63 +6,120 @@
 
 
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalCenterTitle">New Investment:</h5>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default panel-shadow" data-collapsed="0">
+                            <div class="panel-heading"></div>
+                            <div class="panel-title bold uppercase">
+                                <i class="fa fa-eye"></i>
+                                <strong>Make deposit to the bitcoin address below</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-left">
+                                            <h5 class="bold uppercase">
+                                                Current Balance:
+                                                <strong>0 - USD</strong>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-group bold">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-3 text-right">
+                                                Pay To:
+                                            </div>
+                                            <div class="col-md-9 text-left">
+                                                <div class="input-group">
+                                                    <input type="text" style="color: black; font-weight: bolder;" value="368U3VoRG7ys7cL1knCQBCKTQKAnETstn3 " name="adr" id="myInput" class="form-control bold" readonly="">
+                                                    <span class="input-group-addon" onclick="myFunction()"><strong>COPY</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container col-sm-4">
 
     <div class="well">
         <h3>Account Overview</h3>
         <hr />
-        <p>Invest here</p>
+        <p>INVEST HERE</p>
         <hr />
         <p>HISTORY</p>
         <hr />
-        <p>MAKE DEPOSIT</p>
+        @Html.ActionLink("MAKE DEPOSIT", "Invest", "Account")
         <hr />
         <p>WITHDRAW</p>
         <hr />
         LIVE SUPPORT
-        <hr />
-        <a href="javascript:document.getElementById('logoutForm').submit()">LOG  OFF</a>
     </div>
 
 </div>
 
-<div class="container col-md-8">
-    <h1>Investment Plans</h1>
+<div class="container col-md-8" align="center">
+    <h1 class="title-head" style="color: #ff4136">Investment Plans</h1>
 </div>
 
 <div class="container col-md-4 ">
     <table class="table table-striped table-bordered table-responsive">
         <tbody>
 
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
+            <tr>
+                <td>
+                    <h2>200% AFTER 10 Days</h2>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <button class="btn-primary"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $200</td>
 
 
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Max: $4000</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Advanced</td>
+            </tr>
 
         </tbody>
-       
+
 
 
     </table>
@@ -73,35 +130,35 @@
     <table class="table table-striped table-bordered table-responsive">
         <tbody>
 
-        <tr>
-            <td>
-                <h2>3.3% DAILY FOR 14 Days</h2>
-            </td>
+            <tr>
+                <td>
+                    <h2>2% DAILY 12 Days</h2>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <button class="btn-primary"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 3550$</td>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $300</td>
 
 
-        </tr>
-        <tr>
-            <td>Max: $1000</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Beginner</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Max: $5000</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Beginner</td>
+            </tr>
 
         </tbody>
-       
+
 
 
     </table>
@@ -111,35 +168,35 @@
     <table class="table table-striped table-bordered table-responsive">
         <tbody>
 
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
+            <tr>
+                <td>
+                    <h2>100% AFTER 5 Days</h2>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <button class="btn-primary"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $500</td>
 
 
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Max: $1000</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Expert</td>
+            </tr>
 
         </tbody>
-       
+
 
 
     </table>
@@ -149,112 +206,35 @@
     <table class="table table-striped table-bordered table-responsive">
         <tbody>
 
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
+            <tr>
+                <td>
+                    <h2>200% AFTER 5 Days</h2>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <button class="btn-primary" type="submit"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
-
-
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
-
-        </tbody>
-       
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $500</td>
 
 
-    </table>
-</div>
-
-<div class="container col-md-4"></div>
-<div class="container col-md-4 ">
-    <table class="table table-striped table-bordered table-responsive">
-        <tbody>
-
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
-
-        </tr>
-
-        <tr>
-            <td>
-                <button class="btn-success"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
-
-
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Max: $1000</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Business Pro</td>
+            </tr>
 
         </tbody>
-       
 
-
-    </table>
-</div>
-
-<div class="container col-md-4 ">
-    <table class="table table-striped table-bordered table-responsive">
-        <tbody>
-
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
-
-        </tr>
-
-        <tr>
-            <td>
-                <button class="btn-success"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
-
-
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
-
-        </tbody>
-       
 
 
     </table>
@@ -265,36 +245,126 @@
     <table class="table table-striped table-bordered table-responsive">
         <tbody>
 
-        <tr>
-            <td>
-                <h2>500% AFTER 10 Days</h2>
-            </td>
+            <tr>
+                <td>
+                    <h2>100% AFTER 2 Days</h2>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <button class="btn-success"> INVEST NOW</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Min: 500$</td>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $1000</td>
 
 
-        </tr>
-        <tr>
-            <td>Max: $1200</td>
-        </tr>
-        <tr>
-            <td>Principal: Included</td>
-        </tr>
-        <tr>
-            <td>Plan Name: Advanced</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Max: $1000</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Business Expert</td>
+            </tr>
 
         </tbody>
-       
+
 
 
     </table>
 </div>
+
+<div class="container col-md-4 ">
+    <table class="table table-striped table-bordered table-responsive">
+        <tbody>
+
+            <tr>
+                <td>
+                    <h2>500% AFTER 10 Days</h2>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $500</td>
+
+
+            </tr>
+            <tr>
+                <td>Max: $1200</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Advanced</td>
+            </tr>
+
+        </tbody>
+
+
+
+    </table>
+</div>
+
+<div class="container col-md-4"></div>
+<div class="container col-md-4 ">
+    <table class="table table-striped table-bordered table-responsive">
+        <tbody>
+
+            <tr>
+                <td>
+                    <h2>500% AFTER 10 Days</h2>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> INVEST NOW</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Min: $500</td>
+
+
+            </tr>
+            <tr>
+                <td>Max: $1200</td>
+            </tr>
+            <tr>
+                <td>Principal: Included</td>
+            </tr>
+            <tr>
+                <td>Plan Name: Advanced</td>
+            </tr>
+
+        </tbody>
+
+
+
+    </table>
+</div>
+
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        document.execCommand("copy");
+        alert("You copied the Bitcoin Address: " + copyText.value);
+    }
+</script>
+
+
+
+

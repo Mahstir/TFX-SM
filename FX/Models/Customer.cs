@@ -8,6 +8,7 @@ namespace FX.Models
     public class Customer
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public double Wallet { get; set; }
 
     }

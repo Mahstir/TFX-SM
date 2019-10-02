@@ -118,3 +118,8 @@ C:\Users\User1\source\repos\FX\FX\obj\Release\T-FX.csproj.CopyComplete
 C:\Users\User1\source\repos\FX\FX\obj\Release\FX.dll
 C:\Users\User1\source\repos\FX\FX\obj\Release\FX.pdb
 C:\Users\User1\source\repos\FX\FX\obj\Release\FX.Migrations.AddCustomerTOFX.resources
+C:\Users\User1\source\repos\FX\FX\obj\Release\FX.Migrations.addNameToCustomerClass.resources
+C:\Users\User1\source\repos\FX\FX\bin\System.Web.Http.dll
+C:\Users\User1\source\repos\FX\FX\bin\System.Web.Http.WebHost.dll
+C:\Users\User1\source\repos\FX\FX\bin\System.Web.Http.xml
+C:\Users\User1\source\repos\FX\FX\bin\System.Web.Http.WebHost.xml

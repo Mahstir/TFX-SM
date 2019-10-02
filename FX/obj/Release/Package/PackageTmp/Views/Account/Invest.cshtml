@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 
+
 @{
     ViewBag.Title = "Invest";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +13,7 @@
     <div class="well">
         <h3>Account Overview</h3>
         <hr />
-        <p>Invest here</p>
+        @Html.ActionLink("INVEST HERE", "InvestmentPlans", "Account")
         <hr />
         <p>HISTORY</p>
         <hr />
@@ -42,9 +43,75 @@
         <p>Your current account balance is $0</p>
 
     </div>
-    <button class="btn btn-primary">Make A Deposit</button>
+    <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Make A Deposit</button>
     <div class="col-md-4"></div>
     <button class="btn btn-success">Withdraw Earnings</button>
 
 
 </div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalCenterTitle">New Investment:</h5>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default panel-shadow" data-collapsed="0">
+                            <div class="panel-heading"></div>
+                            <div class="panel-title bold uppercase">
+                                <i class="fa fa-eye"></i>
+                                <strong>Make deposit to the bitcoin address below</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-left">
+                                            <h5 class="bold uppercase">
+                                                Current Balance:
+                                                <strong>0 - USD</strong>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-group bold">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-3 text-right">
+                                                Pay To:
+                                            </div>
+                                            <div class="col-md-9 text-left">
+                                                <div class="input-group">
+                                                    <input type="text" style="color: black; font-weight: bolder;" value="368U3VoRG7ys7cL1knCQBCKTQKAnETstn3 " name="adr" id="myInput" class="form-control bold" readonly="">
+                                                    <span class="input-group-addon" onclick="myFunction()"><strong>COPY</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        document.execCommand('copy');
+        alert("You copied the Bitcoin Address: " + copyText.value);
+    }
+</script>
