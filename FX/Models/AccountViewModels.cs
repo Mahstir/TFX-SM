@@ -69,18 +69,7 @@ namespace FX.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [StringLength(255)]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-        
-
-        [Required]
-        [StringLength(255)]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
-
-
+    
         [Required]
         [StringLength(255)]
         [Display(Name = "Phone Number")]

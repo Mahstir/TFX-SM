@@ -1,0 +1,81 @@
+﻿@model FX.Models.Viewmodels.CustomerFormViewModel
+
+@{
+    ViewBag.Title = "CustomerForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CustomerForm</h2>
+
+@using (Html.BeginForm("Save", "Customers", new { @class = "form-horizontal" }))
+{
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="form-group col-md-2">
+            @Html.LabelFor(c => c.Customer.PlanId)
+            @Html.DropDownListFor(c => c.Customer.PlanId, new SelectList(Model.Plans, "Id", "Name"), "Select Plan", new { @class = "form-control col-md-2" })
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Register Customer" class="btn btn-default" />
+        </div>
+    </div>
+
+
+
+
+
+}
+
+
+
+
+@section scripts
+    {
+    <script>
+
+        $(document).ready(function () {
+
+            var vm = {};
+
+            var emailAddress = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('email'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+
+                remote: {
+                    url: '/api/users?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#email').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                    name: 'email',
+                    display: 'Email',
+                    source: emailAddress
+                });
+
+        }).on("typeahead:select", function (e, user) {
+            vm.userId = user.Id
+        });
+
+
+    </script>
+
+}

@@ -220,9 +220,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Apis\CustomersController.cs" />
+    <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\UsersController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,12 +269,98 @@
     <Compile Include="Migrations\201909281320208_addNameToCustomerClass.Designer.cs">
       <DependentUpon>201909281320208_addNameToCustomerClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910031101558_AddEmailToCustomer.cs" />
+    <Compile Include="Migrations\201910031101558_AddEmailToCustomer.Designer.cs">
+      <DependentUpon>201910031101558_AddEmailToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910031440025_AddPlans.cs" />
+    <Compile Include="Migrations\201910031440025_AddPlans.Designer.cs">
+      <DependentUpon>201910031440025_AddPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910031452511_PopulatePlans.cs" />
+    <Compile Include="Migrations\201910031452511_PopulatePlans.Designer.cs">
+      <DependentUpon>201910031452511_PopulatePlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910031502160_RemoveDateOfPaymentAndReturnFromPlanAndAddToCustomer.cs" />
+    <Compile Include="Migrations\201910031502160_RemoveDateOfPaymentAndReturnFromPlanAndAddToCustomer.Designer.cs">
+      <DependentUpon>201910031502160_RemoveDateOfPaymentAndReturnFromPlanAndAddToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910031502539_PopulatePlans1.cs" />
+    <Compile Include="Migrations\201910031502539_PopulatePlans1.Designer.cs">
+      <DependentUpon>201910031502539_PopulatePlans1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910041708539_MakeDatesInCustomerNullable.cs" />
+    <Compile Include="Migrations\201910041708539_MakeDatesInCustomerNullable.Designer.cs">
+      <DependentUpon>201910041708539_MakeDatesInCustomerNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050915153_AddWalletToCustomerAndTotalAmountGeneratedToPlan.cs" />
+    <Compile Include="Migrations\201910050915153_AddWalletToCustomerAndTotalAmountGeneratedToPlan.Designer.cs">
+      <DependentUpon>201910050915153_AddWalletToCustomerAndTotalAmountGeneratedToPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050922234_RemoveGainMethodAndTotalAmountGeneratedFromPlan.cs" />
+    <Compile Include="Migrations\201910050922234_RemoveGainMethodAndTotalAmountGeneratedFromPlan.Designer.cs">
+      <DependentUpon>201910050922234_RemoveGainMethodAndTotalAmountGeneratedFromPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050936529_AddAmountToCustomerClass.cs" />
+    <Compile Include="Migrations\201910050936529_AddAmountToCustomerClass.Designer.cs">
+      <DependentUpon>201910050936529_AddAmountToCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050950442_MakeAmountRequired.cs" />
+    <Compile Include="Migrations\201910050950442_MakeAmountRequired.Designer.cs">
+      <DependentUpon>201910050950442_MakeAmountRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910060106161_AddApplicationUserToCustomerClass.cs" />
+    <Compile Include="Migrations\201910060106161_AddApplicationUserToCustomerClass.Designer.cs">
+      <DependentUpon>201910060106161_AddApplicationUserToCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910061236017_ChangeUserToStringFromApplicationUser.cs" />
+    <Compile Include="Migrations\201910061236017_ChangeUserToStringFromApplicationUser.Designer.cs">
+      <DependentUpon>201910061236017_ChangeUserToStringFromApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910062254263_RemoveUserPropertyFromCustomer.cs" />
+    <Compile Include="Migrations\201910062254263_RemoveUserPropertyFromCustomer.Designer.cs">
+      <DependentUpon>201910062254263_RemoveUserPropertyFromCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910062355236_AddCustomerToIdentityModel.cs" />
+    <Compile Include="Migrations\201910062355236_AddCustomerToIdentityModel.Designer.cs">
+      <DependentUpon>201910062355236_AddCustomerToIdentityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910070016023_RemoveCustomerFromIdentityModel.cs" />
+    <Compile Include="Migrations\201910070016023_RemoveCustomerFromIdentityModel.Designer.cs">
+      <DependentUpon>201910070016023_RemoveCustomerFromIdentityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910070914452_AddCustomerToIdentityModel1.cs" />
+    <Compile Include="Migrations\201910070914452_AddCustomerToIdentityModel1.Designer.cs">
+      <DependentUpon>201910070914452_AddCustomerToIdentityModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910070952040_RemoveCustomerFromIdentity.cs" />
+    <Compile Include="Migrations\201910070952040_RemoveCustomerFromIdentity.Designer.cs">
+      <DependentUpon>201910070952040_RemoveCustomerFromIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910071012189_AddUserIdToCustomer.cs" />
+    <Compile Include="Migrations\201910071012189_AddUserIdToCustomer.Designer.cs">
+      <DependentUpon>201910071012189_AddUserIdToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910081535128_MakeAmountNullable.cs" />
+    <Compile Include="Migrations\201910081535128_MakeAmountNullable.Designer.cs">
+      <DependentUpon>201910081535128_MakeAmountNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910081703454_initializeAmountToZero.cs" />
+    <Compile Include="Migrations\201910081703454_initializeAmountToZero.Designer.cs">
+      <DependentUpon>201910081703454_initializeAmountToZero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910091143107_RemoveFirstNameAndLastNameFromIdentityModel.cs" />
+    <Compile Include="Migrations\201910091143107_RemoveFirstNameAndLastNameFromIdentityModel.Designer.cs">
+      <DependentUpon>201910091143107_RemoveFirstNameAndLastNameFromIdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GmailEmailService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Plan.cs" />
+    <Compile Include="Models\Viewmodels\CustomerFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -389,10 +478,13 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -493,6 +585,10 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -544,9 +640,13 @@
     <Content Include="Views\Account\InvestmentPlans.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -589,6 +689,69 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909281320208_addNameToCustomerClass.resx">
       <DependentUpon>201909281320208_addNameToCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031101558_AddEmailToCustomer.resx">
+      <DependentUpon>201910031101558_AddEmailToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031440025_AddPlans.resx">
+      <DependentUpon>201910031440025_AddPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031452511_PopulatePlans.resx">
+      <DependentUpon>201910031452511_PopulatePlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031502160_RemoveDateOfPaymentAndReturnFromPlanAndAddToCustomer.resx">
+      <DependentUpon>201910031502160_RemoveDateOfPaymentAndReturnFromPlanAndAddToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031502539_PopulatePlans1.resx">
+      <DependentUpon>201910031502539_PopulatePlans1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910041708539_MakeDatesInCustomerNullable.resx">
+      <DependentUpon>201910041708539_MakeDatesInCustomerNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050915153_AddWalletToCustomerAndTotalAmountGeneratedToPlan.resx">
+      <DependentUpon>201910050915153_AddWalletToCustomerAndTotalAmountGeneratedToPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050922234_RemoveGainMethodAndTotalAmountGeneratedFromPlan.resx">
+      <DependentUpon>201910050922234_RemoveGainMethodAndTotalAmountGeneratedFromPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050936529_AddAmountToCustomerClass.resx">
+      <DependentUpon>201910050936529_AddAmountToCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050950442_MakeAmountRequired.resx">
+      <DependentUpon>201910050950442_MakeAmountRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910060106161_AddApplicationUserToCustomerClass.resx">
+      <DependentUpon>201910060106161_AddApplicationUserToCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910061236017_ChangeUserToStringFromApplicationUser.resx">
+      <DependentUpon>201910061236017_ChangeUserToStringFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910062254263_RemoveUserPropertyFromCustomer.resx">
+      <DependentUpon>201910062254263_RemoveUserPropertyFromCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910062355236_AddCustomerToIdentityModel.resx">
+      <DependentUpon>201910062355236_AddCustomerToIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910070016023_RemoveCustomerFromIdentityModel.resx">
+      <DependentUpon>201910070016023_RemoveCustomerFromIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910070914452_AddCustomerToIdentityModel1.resx">
+      <DependentUpon>201910070914452_AddCustomerToIdentityModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910070952040_RemoveCustomerFromIdentity.resx">
+      <DependentUpon>201910070952040_RemoveCustomerFromIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071012189_AddUserIdToCustomer.resx">
+      <DependentUpon>201910071012189_AddUserIdToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910081535128_MakeAmountNullable.resx">
+      <DependentUpon>201910081535128_MakeAmountNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910081703454_initializeAmountToZero.resx">
+      <DependentUpon>201910081703454_initializeAmountToZero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910091143107_RemoveFirstNameAndLastNameFromIdentityModel.resx">
+      <DependentUpon>201910091143107_RemoveFirstNameAndLastNameFromIdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
