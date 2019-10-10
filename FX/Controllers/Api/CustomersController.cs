@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace FX.Controllers.Apis
+namespace FX.Controllers.Api
 {
     public class CustomersController : ApiController
     {

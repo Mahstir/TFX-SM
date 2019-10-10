@@ -1,4 +1,5 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home Page";
 }
 
@@ -12,7 +13,36 @@
 <div class="jumbotron">
 
     <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
-    <coingecko-coin-compare-chart-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" locale="en"></coingecko-coin-compare-chart-widget>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://elevenews.com/wp-content/uploads/2018/04/Bitcoin-Images-HD-1000x500-1.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="https://www.wallpapersrc.com/img/fe65253eefe84aba80374531fb87d1ac/bitcoin-and-cryptocurrency-technologies-1280x720.jpg" alt="Chicago">
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+   
 
 </div>
 
@@ -30,7 +60,7 @@
 
 
 <div class="container col-md-6">
-    <img src="http://i.imgur.com/bdZDJLm.jpg" class="img-thumbnail img-responsive" height="800" , width="550" alt="Bitcoin" />
+    <img src="https://hackernoon.com/hn-images/1*AqNklmVHdflXU4aDbIAzAQ.png" class="img-thumbnail img-responsive" height="800" , width="550" alt="Bitcoin" />
 </div>
 
 <div class="col-md-6 panel panel-default">
@@ -41,7 +71,7 @@
 
     <div class="panel-body">
         <p>
-            TFX-XM Investment Corporate Company Limited is avery experienced and promising organization in the field of trustee administration and long-haul ventures. The joining of distinctive systems and techniques add to income, gainful collaboration, and organized advancement
+            TFX-XM Investment Corporate Company Limited is avery experienced and promising organization in the field of trustee administration and long-haul ventures.
         </p>
         <ul class="nav nav-tabs ">
             <li class=" debo"><a data-toggle="tab" class="debo" href="#menu1">What We think</a></li>
@@ -53,11 +83,10 @@
                 <p>We bring with us a core group of managers and delivery professionals that are second to none in the business community. Keeping that in mind, we strive to make each delivery a great experience for you. We appreciate the trust that you have placed in us.</p>
             </div>
             <div id="menu2" class="tab-pane fade in active">
-                <p>With a professional and responsible team, we strive to make each The procedure, make the maximum profit for you. We will appreciate receiving any suggestion from you.</p>
+                <p>With a professional and responsible team, we strive to make each The procedure, make the maximum profit for you.</p>
             </div>
         </div>
     </div>
 
 </div>
-
 

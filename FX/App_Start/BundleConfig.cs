@@ -22,11 +22,13 @@ namespace FX
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/datatables/jquery.datatables.js",
-                      "~/Scripts/datatables/datatables.bootstrap.js"));
+                      "~/Scripts/datatables/datatables.bootstrap.js",
+                      "~/Scripts/typeahead.bundle.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-TFX.css",
                       "~/Content/Site.css",
+                      "~/Content/typeahead.css",
                       "~/Content/datatables/css/datatables.bootstrap.css"));
         }
     }

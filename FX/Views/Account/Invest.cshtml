@@ -1,12 +1,14 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@model FX.Models.Customer
+
 
 
 @{
     ViewBag.Title = "Invest";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <h2>Your Investment Details</h2>
+
 
 <div class="container col-sm-4">
 
@@ -27,25 +29,79 @@
     </div>
 
 </div>
-
 <div class="container col-sm-8">
     <div class="well">
         @if (DateTime.Now.Hour >= 12)
         {
-            <p>Good Day @User.Identity.GetUserName()! </p>
+            <p>Good Day @User.Identity.Name! </p>
         }
         else
         {
-            <p>Good Morning @User.Identity.GetUserName()! </p>
+            <p>Good Morning @User.Identity.Name! </p>
+        }
+
+        <hr width="1" size="500" />
+
+        @if (Model == null)
+        {
+            <p>Your current account balance is $0</p>
+
+        }
+        else
+        {
+            <p>Your current account balance is $@Model.Amount</p>
+        }
+        <hr />
+
+        @if (Model == null)
+        {
+            <p>You are not currently on any plan</p>
+
+        }
+        else
+        {
+            <p>Your are on the @Model.Plan.Name plan</p>
         }
 
         <hr />
-        <p>Your current account balance is $0</p>
 
-    </div>
-    <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Make A Deposit</button>
-    <div class="col-md-4"></div>
-    <button class="btn btn-success">Withdraw Earnings</button>
+        @if (Model == null)
+        {
+
+
+        }
+        else
+        {
+
+            <p>Your date of withdrawal is @Model.DateOfReturn.Value.ToShortDateString() </p>
+            <hr />
+
+        }
+
+
+
+
+
+
+    </div><button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Make A Deposit</button>
+    @if (Model.DateOfReturn != DateTime.Today)
+    {
+        @Html.ActionLink("Make a Withdrawal", "Invest", "Account", null, new { @class = "btn btn-success disabled" })
+
+    }
+    else
+    {
+        @Html.ActionLink("Make a Withdrawal", "Invest", "Account", null, new { @class = "btn btn-success" })
+
+    }
+
+    @if (Model == null)
+    {
+        @Html.ActionLink("Select a Plan", "CustomerForm", "Customers", null, new { @class = "btn btn-warning" })
+
+    }
+
+
 
 
 </div>

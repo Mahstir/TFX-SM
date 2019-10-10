@@ -10,17 +10,23 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FX.Models;
+using System.Data.Entity;
+using FX.Models.Viewmodels;
+
 
 namespace FX.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext _context;
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -53,17 +59,28 @@ namespace FX.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult Invest()
+        {
+            var uId = User.Identity.GetUserId();
+            var viewModel = _context.Customers.Include(c => c.Plan).FirstOrDefault(c => c.UserId == uId);
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Invest(Customer customer)
         {
             return View();
         }
-
-       
         
         public ActionResult InvestmentPlans()
         {
             return View();
         }
+
+       
+
 
         //
         // GET: /Account/Login
@@ -180,8 +197,6 @@ namespace FX.Controllers
                   
                     UserName = model.Email,
                     Email = model.Email,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
                     Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
